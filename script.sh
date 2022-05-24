@@ -1,7 +1,7 @@
 #! /bin/bash
 touch /home/recp.txt
 touch /home/recpfile.txt
-
+#
 
 
 for e in {1..100}; do
